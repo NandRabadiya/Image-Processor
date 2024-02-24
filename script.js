@@ -8,6 +8,20 @@ function toggleConversionOptions() {
   formatSelect.disabled = !document.getElementById("convertCheckbox").checked;
 }
 
+function dataURLToBlob(dataURL) {
+   var parts = dataURL.split(";base64,");
+   var contentType = parts[0].split(":")[1];
+   var raw = window.atob(parts[1]);
+   var rawLength = raw.length;
+   var uInt8Array = new Uint8Array(rawLength);
+  
+   for (var i = 0; i < rawLength; ++i) {
+     uInt8Array[i] = raw.charCodeAt(i);
+   }
+  
+  return new Blob([uInt8Array], { type: contentType });
+}
+
 function previewImage(event) {
   var input = event.target;
   var image = document.getElementById("preview");
