@@ -38,6 +38,30 @@ function processImage() {
   //console.log("Original size: " + inputSize);
   var compressionQuality = 100; // Default compression quality
   var expectedSize = inputSize;
-  
-//compression and conversion logic here
+
+  if (compressCheckbox.checked) 
+  {
+    var compressionOption = document.querySelector(
+      'input[name="compression"]:checked'
+    ).value;
+
+    if (compressionOption === "low")       //low => low quality & more compression
+    {
+      compressionPercentage = 80;
+      expectedSize = inputSize * (1 - compressionPercentage / 100); // Reduce by 80%
+    } 
+    else if (compressionOption === "high")       //high => high quality & less compression
+    {
+      compressionPercentage = 30;
+      expectedSize = inputSize * (1 - compressionPercentage / 100); // Reduce by 30%
+    } 
+    else if (compressionOption === "custom") 
+    {
+      compressionPercentage = document.getElementById("customCompression").value;
+      expectedSize = inputSize * (1 - compressionPercentage / 100); // Reduce by custom percentage
+    }
+  }
+  //console.log("Expected size: " + expectedSize);
+
+//conversion logic here
 }
