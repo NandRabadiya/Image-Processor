@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+  
+<body>
+    <h1>IMAGE PROCESSOR</h1>
+    <input type="file" accept="image/*"><br>
+  
+    <label><input type="checkbox">Compress</label><br>
+    <label><input type="radio" name="compression" value="high"> High Quality & Less Compression</label><br>
+    <label><input type="radio" name="compression" value="low"> Low Quality & More Compression</label><br>
+    <label><input type="radio" name="compression" value="custom"> Custom <label>Compression Level:</label>
+        <input type="range" min="0" max="100" value="50">
+        <span>50%</span>
+    </label>
+
+    <label><input type="checkbox">Convert</label>
+    <select>
+        <option value="jpeg">jpeg/jpg</option>
+        <option value="png">png</option>
+        <option value="webp">webp</option>
+    </select>
+
+    <button>Start</button>
+    <a class="button" style="display: none;" download="Output_img">Download</a>
+    <script src="script.js"></script>
+</body>
+</html>
