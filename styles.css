@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #b1d3e3;
+    /* Light blue */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 2%;
+    color: #2e6da4;
+    /* Dark blue */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input[type="file"],
+input[type="checkbox"],
+select {
+    border: 1px solid #e2e8f0;
+    /* Light gray */
+    padding: 5px;
+}
+
+/* CSS for button */
+button {
+    display: block;
+    width: 90%;
+    padding: 14px 15px;
+    margin: 0 auto 10px;
+    background-color: #2e6da4;
+    /* Dark blue */
+    color: #fff;
+    /* White */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+}
