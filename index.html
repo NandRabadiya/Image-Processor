@@ -10,24 +10,28 @@
 <body>
     <h1>IMAGE PROCESSOR</h1>
     <input type="file" accept="image/*"><br>
-  
-    <label><input type="checkbox">Compress</label><br>
-    <label><input type="radio" name="compression" value="high"> High Quality & Less Compression</label><br>
-    <label><input type="radio" name="compression" value="low"> Low Quality & More Compression</label><br>
-    <label><input type="radio" name="compression" value="custom"> Custom <label>Compression Level:</label>
-        <input type="range" min="0" max="100" value="50">
-        <span>50%</span>
-    </label>
-
-    <label><input type="checkbox">Convert</label>
-    <select>
-        <option value="jpeg">jpeg/jpg</option>
-        <option value="png">png</option>
-        <option value="webp">webp</option>
-    </select>
-
+    <div class="option-container">
+        <label><input type="checkbox" id="compressCheckbox" onchange="toggleCompressionOptions()">Compress</label><br>
+        <div id="compressionOptions" style="display: none;">
+            <label><input type="radio" name="compression" value="high"> High Quality & Less Compression</label><br>
+            <label><input type="radio" name="compression" value="low"> Low Quality & More Compression</label><br>
+            <label><input type="radio" name="compression" value="custom"> Custom <label>Compression Level:</label>
+                <input type="range" min="0" max="100" value="50">
+                <span>50%</span>
+            </label>
+        </div>
+    </div>
+    <div class="option-container">
+        <label><input type="checkbox" id="convertCheckbox" onchange="toggleConversionOptions()">Convert</label>
+        <select id="formatSelect">
+            <option value="jpeg">jpeg/jpg</option>
+            <option value="png">png</option>
+            <option value="webp">webp</option>
+        </select>
+    </div>
     <button>Start</button>
     <a class="button" style="display: none;" download="Output_img">Download</a>
     <script src="script.js"></script>
 </body>
+    
 </html>
