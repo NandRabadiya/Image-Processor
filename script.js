@@ -38,6 +38,12 @@ function previewImage(event) {
   }
 }
 
+const rangeInput = document.getElementById("customCompression");
+const rangeValue = document.getElementById("range-value");
+rangeInput.addEventListener("input", function () {
+  rangeValue.textContent = this.value + "%";
+});
+
 function processImage() {
   var fileInput = document.getElementById("imageInput");
 
