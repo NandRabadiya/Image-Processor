@@ -120,3 +120,58 @@ input[type="checkbox"]:checked {
 .checkbox-label {
     color: #222;
 }
+
+/* Slider of custom compression*/
+  #customCompression {
+    width: 200px; /* Adjust width as needed */
+    margin: 0 10px; /* Adjust margin as needed */
+    display: inline-block;
+  }
+  
+  #customCompression::-webkit-slider-runnable-track {
+    background: #ddd;
+    height: 10px; /* Adjust height as needed */
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-top: 7px;
+  }
+  
+  #customCompression::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #333;
+    width: 16px; /* Adjust width as needed */
+    height: 16px; /* Adjust height as needed */
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  #customCompression::-webkit-slider-thumb:before {
+    content: "";
+    position: absolute;
+    left: -10px; /* Adjust left position as needed */
+    top: -5px; /* Adjust top position as needed */
+    width: 20px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 0.8em;
+    line-height: 1em;
+    text-align: center;
+    background-color: #ddd;
+    color: #333;
+  }
+  
+  #customCompression::-webkit-slider-thumb:after {
+    content: attr(value) "%";
+    position: absolute;
+    left: -50%;
+    transform: translateX(-50%);
+    top: -10px; /* Adjust top position as needed */
+    width: 100%;
+    font-size: 0.8em;
+    line-height: 1em;
+    text-align: center;
+    color: #fff;
+  }
