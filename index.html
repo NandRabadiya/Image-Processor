@@ -8,41 +8,42 @@
 </head>
   
 <body>
-    <h1>IMAGE PROCESSOR</h1>
+    <div class="container">
+        <h1>IMAGE PROCESSOR</h1>
     
-    <div class="input-container">
-        <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)"><br>    
-        <img id="preview" alt="Preview Image">
-    </div>
-    
-    <div class="option-container">
-        <label><input type="checkbox" id="compressCheckbox" onchange="toggleCompressionOptions()">Compress</label><br>
-        <div id="compressionOptions" style="display: none;">
-            <label><input type="radio" name="compression" value="high">Basic Compression</label><br>
-            <label><input type="radio" name="compression" value="low">Strong Compression</label><br>
-            <label><input type="radio" name="compression" value="custom"> Custom <label  for="customCompression">Compression Level:</label>
-            <div class="range-container">
-                <input type="range" id="customCompression" min="0" max="100" value="50">
-            </div>
-                <span id="range-value">50%</span>
-            </label>
+        <div class="input-container">
+            <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)"><br>    
+            <img id="preview" alt="Preview Image">
         </div>
-    </div>
     
-    <div class="option-container">
-        <label><input type="checkbox" id="convertCheckbox" onchange="toggleConversionOptions()">Convert</label>
-        <select id="formatSelect">
-            <option value="jpeg">jpeg/jpg</option>
-            <option value="png">png</option>
-            <option value="webp">webp</option>
-        </select>
-    </div>
+        <div class="option-container">
+            <label><input type="checkbox" id="compressCheckbox" onchange="toggleCompressionOptions()">Compress</label><br>
+            <div id="compressionOptions" style="display: none;">
+                <label><input type="radio" name="compression" value="high">Basic Compression</label><br>
+                <label><input type="radio" name="compression" value="low">Strong Compression</label><br>
+                <label><input type="radio" name="compression" value="custom"> Custom <label  for="customCompression">Compression Level:</label>
+                    <div class="range-container">
+                        <input type="range" id="customCompression" min="0" max="100" value="50">
+                    </div>
+                    <span id="range-value">50%</span>
+                </label>
+            </div>
+        </div>
     
-    <div class="button-container">
-        <button id="startButton" onclick="processImage()">Start</button>
-        <a id="downloadButton" class="button" style="display: none;" download="Output_img" onclick="location.reload();">Download</a>
-    </div>
-        
+        <div class="option-container">
+            <label><input type="checkbox" id="convertCheckbox" onchange="toggleConversionOptions()">Convert</label>
+            <select id="formatSelect">
+                <option value="jpeg">jpeg/jpg</option>
+                <option value="png">png</option>
+                <option value="webp">webp</option>
+            </select>
+        </div>
+    
+        <div class="button-container">
+            <button id="startButton" onclick="processImage()">Start</button>
+            <a id="downloadButton" class="button" style="display: none;" download="Output_img" onclick="location.reload();">Download</a>
+        </div>
+    </div>    
     <script src="script.js"></script>
     
 </body>
