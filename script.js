@@ -149,3 +149,22 @@ function downloadImage(image, expectedSize, compressionQuality, targetFormate)
     downloadButton.style.display = "inline-block";
   }
 }
+
+function processImageWithQualityAdjustment(image, expectedSize, newQuality, targetFormate) 
+{
+  var canvas = document.createElement("canvas");
+  var ctx = canvas.getContext("2d");
+  var img = new Image();
+
+  img.onload = function () 
+  {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+
+    if (targetFormate == "png") targetFormate = "jpeg";
+    var string = "image/" + targetFormate;
+    var processedImageData = canvas.toDataURL(string, newQuality / 100);
+    var processedImage = dataURLToBlob(processedImageData);
+  };
+}
