@@ -20,9 +20,11 @@
         <div id="compressionOptions" style="display: none;">
             <label><input type="radio" name="compression" value="high">Basic Compression</label><br>
             <label><input type="radio" name="compression" value="low">Strong Compression</label><br>
-            <label><input type="radio" name="compression" value="custom"> Custom <label>Compression Level:</label>
-                <input type="range" min="0" max="100" value="50">
-                <span>50%</span>
+            <label><input type="radio" name="compression" value="custom"> Custom <label  for="customCompression">Compression Level:</label>
+            <div class="range-container">
+                <input type="range" id="customCompression" min="0" max="100" value="50">
+            </div>
+                <span id="range-value">50%</span>
             </label>
         </div>
     </div>
