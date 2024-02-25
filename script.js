@@ -85,4 +85,35 @@ function processImage() {
   // console.log("Target format: " + targetFormat);
   //console.log("Compression quality: " + compressionQuality);
 
+  var canvas = document.createElement("canvas");
+  var ctx = canvas.getContext("2d");
+  var img = new Image();
+
+  img.onload = function () 
+  {
+    var inputFormat = imageFile.type.split("/")[1];
+    //console.log("input format: " + inputFormat);
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+
+    if (!convertCheckbox.checked) 
+    {
+      targetFormate = inputFormat;
+      //console.log("target formate" + targetFormate);
+    }
+    var string = "image/" + targetFormate;
+    //console.log("Target format: " + string);
+    //console.log("Compression quality: " + compressionQuality / 100);
+    var processedImageData = canvas.toDataURL(string, compressionQuality / 100);
+    var processedImage = dataURLToBlob(processedImageData);
+
+    // Trigger the download
+    downloadImage(processedImage, expectedSize, compressionQuality, targetFormate);
+  };
+
+  img.src = URL.createObjectURL(imageFile);
+
+  // Disable start button while processing
+  startButton.disabled = true;
 }
