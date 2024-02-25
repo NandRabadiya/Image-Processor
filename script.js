@@ -133,20 +133,35 @@ function downloadImage(image, expectedSize, compressionQuality, targetFormate)
   if (compressCheckbox.checked) {
     if (outputSize > expectedSize && compressionQuality > 5) 
     {
+      //console.log("Output size still larger than expected, further compressing...");
+      // Recursive call with decreased compression quality
       processImageWithQualityAdjustment(image, expectedSize, compressionQuality - 5, targetFormate);
     } 
     else 
     {
+      //console.log("Output size within acceptable range.");
+      // Set the URL as the href attribute of the download button
       downloadButton.setAttribute("href", url);
       downloadButton.setAttribute("download", "Output_img");
+            
+      // Show the download button
+      downloadButton.style.display = "inline-block";
+
+      // Re-enable start button
       document.getElementById("startButton").disabled = false;
     }
   } 
   else 
   {
+    // Set the URL as the href attribute of the download button
     downloadButton.setAttribute("href", url);
     downloadButton.setAttribute("download", "Output_img");
+
+    // Show the download button
     downloadButton.style.display = "inline-block";
+    
+    // Re-enable start button
+    document.getElementById("startButton").disabled = false;
   }
 }
 
@@ -164,7 +179,15 @@ function processImageWithQualityAdjustment(image, expectedSize, newQuality, targ
 
     if (targetFormate == "png") targetFormate = "jpeg";
     var string = "image/" + targetFormate;
+    // console.log("Target format: " + string);
+    //console.log("Compression quality: " + newQuality / 100);
+   
     var processedImageData = canvas.toDataURL(string, newQuality / 100);
     var processedImage = dataURLToBlob(processedImageData);
+
+     // Trigger the download
+    downloadImage(processedImage, expectedSize, newQuality, targetFormate);
   };
+    img.src = URL.createObjectURL(image);
+
 }
