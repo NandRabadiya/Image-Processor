@@ -123,3 +123,29 @@ function processImage() {
   // Disable start button while processing
   startButton.disabled = true;
 }
+
+function downloadImage(image, expectedSize, compressionQuality, targetFormate) 
+{
+  var downloadButton = document.getElementById("downloadButton");
+  var url = URL.createObjectURL(image);
+  var outputSize = image.size / 1000;
+  
+  if (compressCheckbox.checked) {
+    if (outputSize > expectedSize && compressionQuality > 5) 
+    {
+      processImageWithQualityAdjustment(image, expectedSize, compressionQuality - 5, targetFormate);
+    } 
+    else 
+    {
+      downloadButton.setAttribute("href", url);
+      downloadButton.setAttribute("download", "Output_img");
+      document.getElementById("startButton").disabled = false;
+    }
+  } 
+  else 
+  {
+    downloadButton.setAttribute("href", url);
+    downloadButton.setAttribute("download", "Output_img");
+    downloadButton.style.display = "inline-block";
+  }
+}
