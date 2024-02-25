@@ -142,7 +142,7 @@ function downloadImage(image, expectedSize, compressionQuality, targetFormate)
       //console.log("Output size within acceptable range.");
       // Set the URL as the href attribute of the download button
       downloadButton.setAttribute("href", url);
-      downloadButton.setAttribute("download", "Output_img");
+      downloadButton.setAttribute("download", "Processed_Image");
             
       // Show the download button
       downloadButton.style.display = "inline-block";
