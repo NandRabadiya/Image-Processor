@@ -121,6 +121,20 @@ input[type="checkbox"]:checked {
     color: #222;
 }
 
+/* Dropdowns */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: #000000;
+  }
+
 /* Slider of custom compression*/
   #customCompression {
     width: 200px; /* Adjust width as needed */
