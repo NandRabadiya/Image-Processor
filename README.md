@@ -2,7 +2,7 @@
 
 **Discover the power of effortless image manipulation with Image Processor!** 
 
-This web-based application empowers you to resize, convert, and optimize your images with ease. Whether you're preparing visuals for a website, optimizing file sizes, or exploring different formats, Image Processor simplifies the process.
+This web-based application empowers you to effortlessly manipulate images. Whether you're looking to compress or convert your images or _**both at the same time**_, this tool has you covered. Below, we provide a succinct overview of its features and how to begin using it.
 
 **Key Features:**
 
@@ -31,6 +31,7 @@ The Image Processor is built with the following technologies:
 * <img src="https://img.icons8.com/color/24/000000/html-5--v1.png"/> HTML 
 * <img src="https://img.icons8.com/color/24/000000/css3.png"/> CSS 
 * <img src="https://img.icons8.com/color/24/000000/javascript--v1.png"/> JavaScript
+* Canvas API: It allows for dynamic image processing directly within the web browser, enabling tasks such as resizing, compressing, and converting images without the need for server-side processing.
 
 **Effortless Image Management Awaits:**
 
