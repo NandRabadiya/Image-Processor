@@ -76,6 +76,13 @@ function processImage() {
     }
   }
   //console.log("Expected size: " + expectedSize);
+  
+  var targetFormate;
+  if (convertCheckbox.checked) 
+  {
+    targetFormate = document.getElementById("formatSelect").value;
+  }
+  // console.log("Target format: " + targetFormat);
+  //console.log("Compression quality: " + compressionQuality);
 
-//conversion logic here
 }
