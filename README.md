@@ -20,9 +20,10 @@ This web-based application empowers you to effortlessly manipulate images. Wheth
 4. **Start processing:** Click the "Start" button to unleash the magic.
 5. **Download:** Once complete, click "Download" to save your masterpiece.
 
-**Experience the Magic with a Live Demo:**
+**Experience the Magic with a Live Demo & try it yourself**
 
-🌟 Click here to explore the live demo: [link to demo](#).
+🌟 Click here to explore the [live demo](https://youtu.be/Xtum2G6nrKg).<br>
+🌟 [Check out the website](https://nandrabadiya.github.io/Image-Processor/).
 
 **Technology Used:**
 
